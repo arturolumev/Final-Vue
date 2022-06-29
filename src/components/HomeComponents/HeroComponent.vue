@@ -2,10 +2,8 @@
   <v-container class="pb-15">
     <v-row>
       <v-col lg="6">
-        <h2 class="intro-text">Bienvenido a <br>COD|NG</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Amet dictum sit amet justo donec enim diam vulputate. Enim sed faucibus turpis in eu mi. Nibh
-          cras pulvinar mattis nunc sed blandit libero. Cras tincidunt lobortis feugiat vivamus at augue eget arcu.</p>
+        <h2 class="intro-text">Bienvenido a <br>{{ title }}</h2>
+        <p>{{ subtext }}</p>
         <br>
         <v-list-item class="ml-5">
           <LoginComponent/>
@@ -21,6 +19,12 @@
 <script>
 export default {
   name: "HeroComponent",
+  data: () => ({
+    title: 'COD|NG',
+    subtext: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n' +
+        '          magna aliqua. Amet dictum sit amet justo donec enim diam vulputate. Enim sed faucibus turpis in eu mi. Nibh\n' +
+        '          cras pulvinar mattis nunc sed blandit libero. Cras tincidunt lobortis feugiat vivamus at augue eget arcu.'
+  }),
   components: {
     LoginComponent: () => import('@/components/HomeComponents/LoginComponent')
   }

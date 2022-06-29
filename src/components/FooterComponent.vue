@@ -3,7 +3,7 @@
     <v-col lg="12">
       <v-row justify="center">
         <v-col lg="4" class="text-center">
-          <v-toolbar-title>COD|NG</v-toolbar-title>
+          <v-toolbar-title>{{ footerTitle }}</v-toolbar-title>
           <v-card-text>
             <v-btn
                 v-for="icon in icons"
@@ -17,17 +17,16 @@
             </v-btn>
           </v-card-text>
           <v-subheader>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua.
+            {{ footerInfo }}
           </v-subheader>
         </v-col>
 
       </v-row>
       <div class="mt-10">
         <v-divider></v-divider>
-        <v-subheader>Copyright (c) 2003 Coding All Rights Reserved. {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        <v-subheader>{{ copyright }} {{ new Date().getFullYear() }} — <strong>{{ namePaginaFooter }}</strong>
           <v-spacer/>
-          <strong>Designed by <u>Group Name</u></strong>
+          <strong>Designed by <u>{{ groupName }}</u></strong>
         </v-subheader>
       </div>
     </v-col>
@@ -36,7 +35,7 @@
 
 <script>
 export default {
-  name: "FooterView",
+  name: "FooterComponent",
   data: () => ({
     icons: [
       'mdi-facebook',
@@ -44,6 +43,12 @@ export default {
       'mdi-linkedin',
       'mdi-instagram',
     ],
+    footerTitle: 'COD|NG',
+    footerInfo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n' +
+        '            dolore magna aliqua.',
+    copyright: 'Copyright (c) 2003 Coding All Rights Reserved.',
+    namePaginaFooter: 'COD|NG',
+    groupName: 'Group Name'
   }),
 }
 </script>

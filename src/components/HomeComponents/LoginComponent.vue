@@ -182,7 +182,7 @@ export default {
       console.log(envio)
       if (envio.data.email) {
         this.dialog = false;
-        router.push('/login')
+        router.push('/user')
         window.localStorage.setItem('usuario-logeado', envio.data.email)
       }
     },
@@ -192,7 +192,7 @@ export default {
       console.log(envio)
       if (envio.data.email) {
         this.dialog = false;
-        router.push('/login')
+        router.push('/user')
         window.localStorage.setItem('usuario-logeado', envio.data.email)
       }
     }
