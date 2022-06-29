@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <!-- Encabezado | NavBar -->
+    <Header/>
+    <v-main>
+      <v-container>
+      <router-view></router-view>
+      </v-container>
+    </v-main>
+    <!-- Pie de pagina -->
+    <Footer/>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-nav {
-  padding: 30px;
-}
+import Header from "@/components/HeaderComponent";
+import Footer from "@/components/FooterComponent";
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+export default {
+  name: 'App',
+  drawer: null,
+  components: {Footer, Header},
+};
+</script>

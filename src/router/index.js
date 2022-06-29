@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
+import LoginView from "@/views/LoginView";
+import HomeView from "@/views/HomeView";
 
 Vue.use(VueRouter)
 
@@ -11,17 +13,24 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: 'login',
+    component: LoginView
   }
 ]
 
 const router = new VueRouter({
   routes
+})
+
+router.beforeEach((to, from, next) => {
+
+  // eslint-disable-next-line no-prototype-builtins
+  if (to.name !== 'login' && !window.localStorage.hasOwnProperty('usuario-logeado')) {
+    next({
+      name: 'login'
+    })
+  } else next()
 })
 
 export default router
