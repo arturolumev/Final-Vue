@@ -12,7 +12,8 @@
     <v-btn
         small
         fab
-        @click="$vuetify.theme.dark = ! $vuetify.theme.dark"
+        @click=switchTheme()
+        elevation="0"
     >
       <v-icon>{{ icon }}</v-icon>
     </v-btn>
@@ -25,7 +26,14 @@ export default {
   data: () => ({
     titulo: 'COD|NG',
     icon: 'mdi-theme-light-dark'
-  })
+  }),
+  methods: {
+    switchTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+
+      localStorage.setItem('theme', this.$vuetify.theme.dark ? 'dark' : 'light');
+    }
+  }
 }
 </script>
 

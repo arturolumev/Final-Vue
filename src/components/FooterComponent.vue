@@ -45,7 +45,7 @@ export default {
     ],
     footerTitle: 'COD|NG',
     footerInfo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n' +
-        '            dolore magna aliqua.',
+        '            dolore magna aliqua dolore magna aliqua. Si ves algun problema, escribenos al siguiente correo: coding@email.com',
     copyright: 'Copyright (c) 2003 Coding All Rights Reserved.',
     namePaginaFooter: 'COD|NG',
     groupName: 'Group Name'

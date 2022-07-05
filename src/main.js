@@ -4,7 +4,14 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
+import {setCookie, getCookie, delCookie} from "@/assets/login/cookie";
+
 Vue.config.productionTip = false
+Vue.prototype.$cookieStore = {
+  setCookie,
+  getCookie,
+  delCookie
+}
 
 new Vue({
   router,

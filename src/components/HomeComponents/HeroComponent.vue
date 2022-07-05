@@ -10,7 +10,7 @@
         </v-list-item>
       </v-col>
       <v-col lg="6">
-        <img width="100%" src="../../assets/hero-image.jpg">
+        <img width="100%" src="../../assets/hero-image.jpg" alt="Imagen de vista Home">
       </v-col>
     </v-row>
   </v-container>
@@ -36,10 +36,5 @@ export default {
     font-size: 60px;
     font-weight: bold;
     color: indigo;
-  }
-  p.description {
-    font-size: 19px;
-    margin: 32px 0px;
-    color: #444444ba;
   }
 </style>
